@@ -1,0 +1,71 @@
+/* settings */
+html {
+}
+a {
+  transition: .2s;
+  text-decoration: none;
+}
+button,
+input,
+textarea {
+  font-family: "SegoeWP", sans-serif;
+  font-size: 16px;
+  color: $black;
+}
+body {
+  height: 100%;
+  min-width: 319px;
+  background-color: #fff;
+  font-family: "SegoeWP", sans-serif;
+  font-size: 16px;
+  color: $black;
+  &.lock {
+    position: fixed;
+  }
+}
+.mobile-hide {
+  @media (max-width: $break_sm) {
+    display: none !important;
+  }
+}
+.mobile-visible {
+  @media (min-width: $break_sm + 1) {
+    display: none !important;
+  }
+}
+.img-responsive {
+  position: relative;
+  overflow: hidden;
+  img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  svg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &:after {
+    content: '';
+    display: block;
+    padding-top: 56.25%;
+  }
+}
+.row {
+  @include row-flex();
+}
+.wrapper {
+  @include wrapper();
+}
+*:-webkit-autofill {
+  -webkit-box-shadow: inset 0 0 0 50px #fff !important;
+}
+*::placeholder {
+  color: #a9a9a9;
+  opacity: 1;
+}
+/* /settings */

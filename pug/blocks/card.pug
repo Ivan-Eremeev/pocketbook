@@ -1,0 +1,45 @@
+mixin card(image, title, count)
+  // card
+  .card
+    .card__container
+      ul.card__stickers.js-hide-list-items(data-value="2")
+        if count == 1
+          li.card__sticker.card__sticker--red Акция
+          li.js-hide-list-all.card__allbtn
+            img(src="img/arrow.svg", alt="")
+        else if count == 2
+          li.card__sticker.card__sticker--red Акция
+          li.card__sticker.card__sticker--blue Защита от влаги
+          li.js-hide-list-all.card__allbtn
+            img(src="img/arrow.svg", alt="")
+        else if count == 3
+          li.card__sticker.card__sticker--red Акция
+          li.card__sticker.card__sticker--blue Защита от влаги
+          li.card__sticker.card__sticker--orange Обложка в комплекте
+          li.js-hide-list-all.card__allbtn
+            img(src="img/arrow.svg", alt="")
+        else if count == 4
+          li.card__sticker.card__sticker--red Акция
+          li.card__sticker.card__sticker--blue Защита от влаги
+          li.card__sticker.card__sticker--orange Обложка в комплекте
+          li.card__sticker.card__sticker--green SuperGlass
+          li.js-hide-list-all.card__allbtn
+            img(src="img/arrow.svg", alt="")
+        else 
+      .card__imageblock
+        a(href="#") 
+          img(src= image, alt="")
+        a(href="#").card__moremob Подробнее
+      .card__content 
+        a(href="#").card__title= title
+        a(href="#").card__btn.card__btn--green купить за 22 990 ₽
+        .card__text Экран Mobius 10.3" • Сенсорный экран • Подсветка • Регулировка цветовой температуры  • Wi-Fi • Bluetooth
+        .card__drop
+          div
+            a(href="#").card__btn.card__btn--black подробнее
+          a(href="#").card__link
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="10" viewBox="0 0 20 10">
+              <path d="M57 517H42v2h15v4h2v-4h3v-2h-3v-4h-2v4zm-15-4h12v2H42v-2zm0 8h12v2H42v-2z" transform="translate(-1082.000000, -3047.000000) translate(1040.000000, 2534.000000)"/>
+            </svg>
+            span все характеристики
+  //	/card

@@ -1,0 +1,109 @@
+extends blocks/base.pug
+
+block title 
+	title Виджет
+
+block style-libs
+	
+
+block content
+
+	// device
+	.device
+		.wrapper
+			.device__head
+				h1.device__title Электронные книги PocketBook
+				.device__subtitle Купи ридер в фирменном интернет-магазине
+			.device__row 	
+				.device__sidebar 
+					// filter
+					.filter
+						.filter__btn.js-drop-btn(data-drop="filterDrop")
+							span.filter__text1 Фильтр
+							span.filter__text2
+								span.filter__cross 
+								| Закрыть фильтр
+						.filter__nav.js-drop#filterDrop
+							.filter__block
+								.filter__title Параметры
+								ul.filter__list 
+									li.filter__item
+										input#parameter_1(type="checkbox", name="parameters").filter__checkbox
+										label(for="parameter_1").filter__checkboxlabel
+										label(for="parameter_1").filter__text Цветной экран
+									li.filter__item
+										input#parameter_2(type="checkbox", name="parameters").filter__checkbox
+										label(for="parameter_2").filter__checkboxlabel
+										label(for="parameter_2").filter__text Сенсорный экран
+									li.filter__item
+										input#parameter_3(type="checkbox", name="parameters").filter__checkbox
+										label(for="parameter_3").filter__checkboxlabel
+										label(for="parameter_3").filter__text Подсветка
+									li.filter__item
+										input#parameter_4(type="checkbox", name="parameters").filter__checkbox
+										label(for="parameter_4").filter__checkboxlabel
+										label(for="parameter_4").filter__text Регулировка температуры
+									li.filter__item
+										input#parameter_5(type="checkbox", name="parameters").filter__checkbox
+										label(for="parameter_5").filter__checkboxlabel
+										label(for="parameter_5").filter__text 6 дюймов
+									li.filter__item
+										input#parameter_6(type="checkbox", name="parameters").filter__checkbox
+										label(for="parameter_6").filter__checkboxlabel
+										label(for="parameter_6").filter__text 7.8 дюймов
+									li.filter__item
+										input#parameter_7(type="checkbox", name="parameters").filter__checkbox
+										label(for="parameter_7").filter__checkboxlabel
+										label(for="parameter_7").filter__text 10 дюймов
+									li.filter__item
+										input#parameter_8(type="checkbox", name="parameters").filter__checkbox
+										label(for="parameter_8").filter__checkboxlabel
+										label(for="parameter_8").filter__text Wi-Fi
+									li.filter__item
+										input#parameter_9(type="checkbox", name="parameters").filter__checkbox
+										label(for="parameter_9").filter__checkboxlabel
+										label(for="parameter_9").filter__text Защита от влаги и пыли
+							.filter__block
+								.filter__title Цвет
+								ul.filter__list 
+									li.filter__item
+										input#color_1(type="checkbox", name="colors").filter__checkbox
+										label(for="color_1").filter__checkboxlabel
+										label(for="color_1").filter__text Красный
+									li.filter__item
+										input#color_2(type="checkbox", name="colors").filter__checkbox
+										label(for="color_2").filter__checkboxlabel
+										label(for="color_2").filter__text Серый
+									li.filter__item
+										input#color_3(type="checkbox", name="colors").filter__checkbox
+										label(for="color_3").filter__checkboxlabel
+										label(for="color_3").filter__text Золотой
+									li.filter__item
+										input#color_4(type="checkbox", name="colors").filter__checkbox
+										label(for="color_4").filter__checkboxlabel
+										label(for="color_4").filter__text Серебристый
+					//	/filter
+				.device__main
+					.row 
+						include blocks/card.pug
+						.device__col
+							+card('img/device_1.jpg', 'PocketBook 740 Pro', 1)
+						.device__col
+							+card('img/device_2.jpg', 'PocketBook 740 Color')
+						.device__col
+							+card('img/device_3.jpg', 'PocketBook 740 Pro')
+						.device__col
+							+card('img/device_4.jpg', 'PocketBook 740', 3)
+						.device__col
+							+card('img/device_5.jpg', 'PocketBook 633 Color')
+						.device__col
+							+card('img/device_6.jpg', 'PocketBook 632', 4)
+						.device__col
+							+card('img/device_7.jpg', 'PocketBook 632 Aqua', 2)
+						.device__col
+							+card('img/device_8.jpg', 'PocketBook 632')
+	//	/device
+
+block js-libs
+	script(src="js/libs/jquery.min.js")
+	script(src="js/libs/jquery.matchHeight-min.js") 

@@ -1,0 +1,218 @@
+.card {
+  height: 100%;
+  padding-top: 20px;
+  position: relative;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px 20px 0;
+    transition: 0.2s;
+    &:after {
+      content: '';
+      display: block;
+      width: 1px;
+      background-color: #dee0e0;
+      position: absolute;
+      top: 20px;
+      bottom: 0;
+      left: 100%;
+    }
+  }
+  &__title {
+    display: block;
+    font-weight: bold;
+    color: $black;
+  }
+  &__imageblock {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    height: 190px;
+    margin-bottom: 24px;
+    img {
+      max-height: 100%;
+    }
+    &.hide {
+      opacity: 0.5;
+    }
+  }
+  &__stickers {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    font-size: 13px;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 8px;
+  }
+  &__sticker {
+    height: 20px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    padding: 0 14px 3px;
+    border-radius: 2px 2px 0 0;
+    color: #fff;
+    white-space: nowrap;
+    &--red {
+      background-color: $red;
+    }
+    &--blue {
+      background-color: $blue;
+    }
+    &--orange {
+      background-color: $orange;
+    }
+    &--green {
+      background-color: $green;
+    }
+  }
+  &__content {
+    flex-grow: 1;
+    padding-bottom: 24px;
+    text-align: center;
+    border-bottom: 1px solid #dee0e0;
+  }
+  &__title {
+    margin-bottom: 20px;
+  }
+  &__btn {
+    display: inline-block;
+    padding: 11px 18px 12px;
+    border: 1px solid $green;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    color: $green;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    &--black {
+      font-weight: normal;
+      &:hover {
+        background-color: $black;
+        color: #fff;
+        border-color: $black;
+      }
+    }
+  }
+  &__text {
+    font-size: 13px;
+    color: $gray;
+  }
+  &__drop {
+    display: none;
+    width: 100%;
+    padding: 0 20px 20px;
+    background-color: #f8f8f8;
+    position: absolute;
+    top: calc(100% - 4px);
+    left: 0;
+    z-index: 3;
+  }
+  &__link {
+    font-size: 13px;
+    font-weight: bold;
+    color: $green;
+    white-space: nowrap;
+    svg {
+      fill: $green;
+      margin-right: 10px;
+      transition: 0.2s;
+    }
+    &:hover {
+      color: $black;
+      svg {
+        fill: black;
+      }
+    }
+  }
+  &__allbtn {
+    display: none;
+    margin-left: 10px;
+    cursor: pointer;
+    user-select: none;
+  }
+  &:hover {
+    .card__container {
+      background-color: #f8f8f8;
+      box-shadow: 0 2px 10px 0 rgba(141, 144, 145, 0.2);
+      &:after {
+        display: none;
+      }
+    }
+    .card__btn--green {
+      background-color: $green;
+      color: #fff;
+      &:hover {
+        background-color: #187973;
+      }
+    }
+  }
+  &__moremob {
+    display: none;
+  }
+  @media (max-width: $break_xs) {
+    &__container {
+      flex-direction: row;
+      padding-bottom: 16px;
+      padding-top: 10px;
+      padding-left: 0;
+      padding-right: 0;
+      &:after {
+        width: auto;
+        height: 1px;
+        top: auto;
+        bottom: 0;
+        left: 10px;
+        right: 10px;
+      }
+    }
+    &__imageblock {
+      justify-content: space-between;
+      max-width: 90px;
+      padding-top: 20px;
+      height: auto;
+      margin-bottom: 0;
+    }
+    &__content {
+      padding-left: 20px;
+      text-align: left;
+      border: none;
+      &.hide {
+        opacity: 0.5;
+      }
+    }
+    &__moremob {
+      display: block;
+      font-size: 14px;
+      color: $green;
+      margin-top: 10px;
+    }
+    &__btn {
+      margin-bottom: 20px;
+    }
+    &__stickers {
+      max-width: 250px;
+    }
+    &:hover {
+      .card__container {
+        background-color: #fff;
+        box-shadow: none;
+        &:after {
+          display: block;
+        }
+      }
+      .card__btn--green {
+        background-color: #fff;
+        color: $green;
+        &:hover {
+          background-color: $green;
+          color: #fff;
+        }
+      }
+    }
+  }
+}

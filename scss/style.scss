@@ -1,0 +1,38 @@
+@import 'mixins';
+
+@include reset(); // Сброс стилей
+
+@import 'mixingrid';
+
+// Переменные для кастомизации Mixingrid
+$columns: 12; // Колличество колонок
+$max-width: 1280px; // Максимальная ширина контейнера
+$gutter: 15px; // Расстояние между колонками
+$offset: 30px; // Поля контейнера
+$offset-sm: 15px; // Поля контейнера на мобилке
+// Брэйкпоинты
+$break_xl: 1400px;
+$break_lg: 1200px;
+$break_md: 1050px;
+$break_sm: 769px;
+$break_xs: 500px;
+
+// Шрифты
+@include font-face("SegoeWP", "../fonts/SegoeWP/SegoeWPregular", normal, normal);
+@include font-face("SegoeWP", "../fonts/SegoeWP/SegoeWPsemibold", 600, normal);
+@include font-face("SegoeWP", "../fonts/SegoeWP/SegoeWPbold", bold, normal);
+@include font-face("SegoeWP", "../fonts/SegoeWP/SegoeWPblack", 900, normal);
+
+// Цвета
+$black: #0a0c0a;
+$green: #00615b;
+$red: #f54a4a;
+$blue: #00a0e9;
+$orange: #ffc56d;
+$gray: #8d9091;
+
+// Подключение файлов
+@import 'blocks/settings';
+@import 'blocks/device';
+@import 'blocks/filter';
+@import 'blocks/card';

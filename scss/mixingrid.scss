@@ -33,6 +33,8 @@
 
 //* Настройки *//
 
+@use "sass:math";
+
 $columns: 12; // Колличество колонок
 $max-width: 1200px; // Максимальная ширина контейнера
 $gutter: 15px; // Расстояние между колонками
@@ -87,22 +89,22 @@ $break_xs: 500px;
 	}
 }
 @mixin col($n) {
-	width: 100% / $columns * $n;
+	width: math.div(100%, $columns) * $n;
 }
 @mixin col-xl($n) {
-	@include xl(width, 100% / $columns * $n);
+	@include xl(width, math.div(100%, $columns) * $n);
 }
 @mixin col-lg($n) {
-	@include lg(width, 100% / $columns * $n);
+	@include lg(width, math.div(100%, $columns) * $n);
 }
 @mixin col-md($n) {
-	@include md(width, 100% / $columns * $n);
+	@include md(width, math.div(100%, $columns) * $n);
 }
 @mixin col-sm($n) {
-	@include sm(width, 100% / $columns * $n);
+	@include sm(width, math.div(100%, $columns) * $n);
 }
 @mixin col-xs($n) {
-	@include xs(width, 100% / $columns * $n);
+	@include xs(width, math.div(100%, $columns) * $n);
 }
 @mixin no-gutter() {
 	margin-left: 0;

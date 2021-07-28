@@ -84,24 +84,65 @@ block content
 										label(for="color_4").filter__text Серебристый
 					//	/filter
 				.device__main
-					.row 
-						include blocks/card.pug
-						.device__col
-							+card('img/device_1-thumb.jpg', 'PocketBook 740 Pro', 1)
-						.device__col
-							+card('img/device_2-thumb.jpg', 'PocketBook 740 Color')
-						.device__col
-							+card('img/device_3-thumb.jpg', 'PocketBook 740 Pro')
-						.device__col
-							+card('img/device_4-thumb.jpg', 'PocketBook 740', 3)
-						.device__col
-							+card('img/device_5-thumb.jpg', 'PocketBook 633 Color')
-						.device__col
-							+card('img/device_6-thumb.jpg', 'PocketBook 632', 4)
-						.device__col
-							+card('img/device_7-thumb.jpg', 'PocketBook 632 Aqua', 2)
-						.device__col
-							+card('img/device_8-thumb.jpg', 'PocketBook 632')
+					// product
+					.product
+						.product__row 
+							.product__col.product__col--1
+								img(src="img/device_1-1.jpg", alt="")
+								img(src="img/device_1-2.jpg", alt="")
+							.product__col.product__col--2
+								.product__content 
+									.product__title PocketBook 632 Aqua
+									.product__text 
+										p Флагманский 6-дюймовый ридер начала 2019 года с защитой от воды по стандарту IPX7
+										p PocketBook 632 Aqua – ультракомпактный флагманский ридер с защитой от воды с помощью геля HZO, но без полной герметизации (которая есть в PocketBook 641 Aqua 2). Уровень защиты – IPX7: модель не боится краткосрочных погружений в воду, брызг, струй воды.
+									.product__btn купить за 22 990 P
+								.product__content 
+									.product__subtitle Характеристики
+									ul.product__list 
+										li 
+											span Дисплей
+											span 6" E Ink®Carta™ 1448×1072
+										li 
+											span Оперативная память
+											span 512 МБ
+										li 
+											span Подсветка
+											span Да, с регулировкой цветовой температуры
+										li 
+											span Сенсорный экран
+											span Емкостный мультисенсорный
+										li 
+											span Габариты
+											span 108×161×8 мм
+										li 
+											span Влагозащита
+											span Да, HZO без полной герметизации. Уровень защиты IPX7
+										li 
+											span Материал экрана
+											span Стекло
+										li 
+											span Количество градаций серого
+											span 16
+										li 
+											span Цвет
+											span Лазурный
+										li 
+											span Батарея
+											span Li-Ion, 3,7 В, 1500 мАч, до 8000 страниц без подсветки
+										li 
+											span Процессор
+											span 1 ГГц х 2 (двухъядерный)
+										li 
+											span Flash-память
+											span 16 ГБ (объём памяти, доступной пользователю, зависит от конфигурации программного обеспечения вашего устройства)
+						.product__back
+							<svg xmlns="http://www.w3.org/2000/svg" width="10" height="9" viewBox="0 0 10 9">
+								<path d="M4.636 7.062c.25.246.666.658.874.904.083.082.083.246 0 .37l-2.163 2.342h6.237c.416 0 .416.41.416.41v.823s0 .41-.416.41H3.347l2.163 2.344c.083.082.083.246 0 .37-.25.245-.666.657-.874.903-.083.083-.25.083-.374 0l-3.368-3.41s-.54-.535-.832-.864c-.083-.082-.083-.246 0-.37l.708-.698s2.744-2.794 3.492-3.534c.084-.083.25-.083.374 0z" transform="translate(-680.000000, -1545.000000) translate(310.000000, 1390.000000) translate(370.000000, 148.000000)"/>
+							</svg>
+							span назад
+						.product__close
+					//	/product
 	//	/device
 
 block js-libs

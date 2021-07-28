@@ -343,6 +343,9 @@ body.lock {
 .filter__checkbox:checked + .filter__checkboxlabel:after {
   display: block;
 }
+.filter__checkbox:checked ~ .filter__text {
+  color: #0a0c0a;
+}
 .filter__checkboxlabel {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -424,6 +427,11 @@ body.lock {
     display: inline;
   }
   .filter__nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
     padding: 25px;
     -webkit-box-shadow: 0 2px 7px 0 rgba(141, 144, 145, 0.2);
     box-shadow: 0 2px 7px 0 rgba(141, 144, 145, 0.2);
@@ -447,6 +455,10 @@ body.lock {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     transform: translate(0, 0);
+  }
+  .filter__block {
+    width: 50%;
+    padding-right: 10px;
   }
   .filter__text2 {
     display: none;
@@ -486,6 +498,11 @@ body.lock {
   .filter__btn {
     margin-left: auto;
     margin-right: auto;
+  }
+}
+@media (max-width: 500px) {
+  .filter__block {
+    width: 100%;
   }
 }
 
@@ -546,7 +563,7 @@ body.lock {
   max-height: 100%;
 }
 .card__imageblock.hide {
-  opacity: 0.5;
+  opacity: 0.15;
 }
 .card__stickers {
   display: -webkit-box;
@@ -915,8 +932,8 @@ body.lock {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+    -ms-flex-negative: 1;
+    flex-shrink: 1;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
@@ -926,7 +943,7 @@ body.lock {
     margin-bottom: 20px;
   }
   .product__col--1 img {
-    max-width: 200px;
+    width: 200px;
     margin: 0 10px 20px;
   }
   .product__col--2 {
@@ -958,5 +975,8 @@ body.lock {
   }
   .product__close {
     right: 16px;
+  }
+  .product__col--1 img:not(:first-child) {
+    display: none;
   }
 }

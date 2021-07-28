@@ -24,6 +24,9 @@
           display: block;
         }
       }
+      ~ .filter__text {
+        color: $black;
+      }
     }
   }
   &__checkboxlabel {
@@ -85,6 +88,8 @@
       }
     }
     &__nav {
+      display: flex;
+      flex-wrap: wrap;
       padding: 25px;
       box-shadow: 0 2px 7px 0 rgba(141, 144, 145, 0.2);
       background-color: #fff;
@@ -101,6 +106,10 @@
         opacity: 1;
         transform: translate(0,0);
       }
+    }
+    &__block {
+      width: 50%;
+      padding-right: 10px;
     }
     &__text2 {
       display: none;
@@ -136,6 +145,11 @@
     &__btn {
       margin-left: auto;
       margin-right: auto;
+    }
+  }
+  @media (max-width: $break_xs) {
+    &__block {
+      width: 100%;
     }
   }
 }

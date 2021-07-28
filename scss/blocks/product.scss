@@ -138,12 +138,12 @@
       &--1 {
         width: 100%;
         display: flex;
-        flex-wrap: wrap;
+        flex-shrink: 1;
         justify-content: center;
         align-items: center;
         margin-bottom: 20px;
         img {
-          max-width: 200px;
+          width: 200px;
           margin: 0 10px 20px;
         }
       }
@@ -180,6 +180,15 @@
     }
     &__close {
       right: 16px;
+    }
+    &__col {
+      &--1 {
+        img {
+          &:not(:first-child) {
+            display: none;
+          }
+        }
+      }
     }
   }
 }

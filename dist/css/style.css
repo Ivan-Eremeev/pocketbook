@@ -391,6 +391,9 @@ body.lock {
   -ms-user-select: none;
   user-select: none;
 }
+.filter__text:hover {
+  color: #0a0c0a;
+}
 .filter__btn {
   display: none;
 }
@@ -670,17 +673,21 @@ body.lock {
 }
 .card__allbtn {
   display: none;
-  margin-left: 10px;
+  width: 20px;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  text-align: center;
 }
 .card__allbtn img {
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
 }
 .card__allbtn.active img {
   -webkit-transform: rotate(0deg);
@@ -701,6 +708,13 @@ body.lock {
 }
 .card:hover .card__btn--green:hover {
   background-color: #187973;
+}
+.card__list-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 @media (max-width: 500px) {
   .card__container {
@@ -754,6 +768,12 @@ body.lock {
     display: block;
     margin-top: 20px;
   }
+  .card__link--mob:hover {
+    color: #00615b;
+  }
+  .card__link--mob:hover svg {
+    fill: #00615b;
+  }
   .card__drop {
     display: none !important;
   }
@@ -770,8 +790,8 @@ body.lock {
     color: #00615b;
   }
   .card:hover .card__btn--green:hover {
-    background-color: #00615b;
-    color: #fff;
+    background-color: #fff;
+    color: #00615b;
   }
 }
 

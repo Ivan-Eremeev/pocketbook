@@ -43,30 +43,63 @@ $(document).ready(function () {
 	// Добавить класс списку .js-hide-list-items
 	// и data-value="" - количество элементов которыеы нужно показывать
 	// Добавить пункт в конец списка с классом .js-hide-list-all (будет открывать список)
-	function hideListItems() {
+	// function hideListItems() {
+	// 	$('.js-hide-list-items').each(function () {
+	// 		var $this = $(this),
+	// 			items = $this.find('li'),
+	// 			btnAll = $this.find('.js-hide-list-all'),
+	// 			valueItem = $this.data('value'),
+	// 			img = $this.siblings('.card__wrap').find('.card__imageblock'),
+	// 			itemTarget = items.filter(function () {
+	// 				return $(this).index() > valueItem - 1
+	// 			});
+	// 		if ((items.length - 1) > valueItem) { // если кол-во элементов превышает указанное в data-valueItem="", то скрываем остальные
+	// 			itemTarget.hide();
+	// 			btnAll.show();
+	// 		}
+	// 		btnAll.on('click', function () { // клик по кнопке "показать еще" (появляются все скрытые пункты списка)
+	// 			if (!btnAll.hasClass('active')) {
+	// 				$(this).addClass('active');
+	// 				itemTarget.show();
+	// 				img.addClass('hide');
+	// 			} else {
+	// 				itemTarget.hide();
+	// 				btnAll.show();
+	// 				img.removeClass('hide');
+	// 				$(this).removeClass('active');
+	// 			}
+	// 		})
+	// 	})
+	// }
+	// hideListItems();
+
+		function hideListItems() {
 		$('.js-hide-list-items').each(function () {
 			var $this = $(this),
 				items = $this.find('li'),
 				btnAll = $this.find('.js-hide-list-all'),
 				valueItem = $this.data('value'),
 				img = $this.siblings('.card__wrap').find('.card__imageblock'),
+				time = 200,
 				itemTarget = items.filter(function () {
 					return $(this).index() > valueItem - 1
 				});
 			if ((items.length - 1) > valueItem) { // если кол-во элементов превышает указанное в data-valueItem="", то скрываем остальные
-				itemTarget.hide();
+				itemTarget.wrapAll('<div class="card__list-wrap"></div>');
+				var wrap = $('.card__list-wrap');
+				wrap.hide();
 				btnAll.show();
+				$this.children().last().before(btnAll);
 			}
 			btnAll.on('click', function () { // клик по кнопке "показать еще" (появляются все скрытые пункты списка)
 				if (!btnAll.hasClass('active')) {
 					$(this).addClass('active');
-					itemTarget.show();
 					img.addClass('hide');
+					wrap.stop().slideDown(time);
 				} else {
-					itemTarget.hide();
-					btnAll.show();
 					img.removeClass('hide');
 					$(this).removeClass('active');
+					wrap.stop().slideUp(time);
 				}
 			})
 		})

@@ -51,11 +51,17 @@
       background-size: contain;
       transition: 0.2s;
     }
+    &:hover {
+      
+    }
   }
   &__text {
     margin-top: -2px;
     cursor: pointer;
     user-select: none;
+    &:hover {
+      color: $black;
+    }
   }
   &__btn {
     display: none;

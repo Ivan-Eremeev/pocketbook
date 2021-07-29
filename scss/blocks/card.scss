@@ -136,11 +136,13 @@
   }
   &__allbtn {
     display: none;
-    margin-left: 10px;
+    width: 20px;
     cursor: pointer;
     user-select: none;
+    text-align: center;
     img {
       transform: rotate(180deg);
+      transition: 0.2s;
     }
     &.active {
       img {
@@ -163,6 +165,10 @@
         background-color: #187973;
       }
     }
+  }
+  &__list-wrap {
+    display: flex;
+    flex-wrap: wrap;
   }
   @media (max-width: $break_xs) {
     &__container {
@@ -212,6 +218,12 @@
       &--mob {
         display: block;
         margin-top: 20px;
+        &:hover {
+          color: $green;
+          svg {
+            fill: $green;
+          }
+        }
       }
     }
     &__drop {
@@ -229,8 +241,8 @@
         background-color: #fff;
         color: $green;
         &:hover {
-          background-color: $green;
-          color: #fff;
+          background-color: #fff;
+          color: $green;
         }
       }
     }

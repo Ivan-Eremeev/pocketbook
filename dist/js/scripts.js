@@ -86,7 +86,7 @@ $(document).ready(function () {
 				});
 			if ((items.length - 1) > valueItem) { // если кол-во элементов превышает указанное в data-valueItem="", то скрываем остальные
 				itemTarget.wrapAll('<div class="card__list-wrap"></div>');
-				var wrap = $('.card__list-wrap');
+				var wrap = $this.find('.card__list-wrap');
 				wrap.hide();
 				btnAll.show();
 				$this.children().last().before(btnAll);

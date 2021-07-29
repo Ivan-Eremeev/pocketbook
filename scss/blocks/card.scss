@@ -112,6 +112,7 @@
     left: 0;
     right: -1px;
     z-index: 3;
+    text-align: center;
   }
   &__link {
     font-size: 13px;
@@ -128,6 +129,9 @@
       svg {
         fill: black;
       }
+    }
+    &--mob {
+      display: none;
     }
   }
   &__allbtn {
@@ -160,12 +164,8 @@
       }
     }
   }
-  &__moremob {
-    display: none;
-  }
   @media (max-width: $break_xs) {
     &__container {
-      flex-direction: row;
       padding-bottom: 16px;
       padding-top: 10px;
       padding-left: 0;
@@ -179,32 +179,43 @@
         right: 10px;
       }
     }
+    &__wrap {
+      display: flex;
+    }
     &__imageblock {
       justify-content: space-between;
       max-width: 90px;
       padding-top: 20px;
       height: auto;
       margin-bottom: 0;
+      &.hide {
+        opacity: 1;
+      }
     }
     &__content {
       padding-left: 20px;
+      padding-bottom: 0;
       text-align: left;
       border: none;
       &.hide {
         opacity: 0.5;
       }
     }
-    &__moremob {
-      display: block;
-      font-size: 14px;
-      color: $green;
-      margin-top: 10px;
-    }
     &__btn {
       margin-bottom: 20px;
     }
     &__stickers {
+      position: static;
       max-width: 250px;
+    }
+    &__link {
+      &--mob {
+        display: block;
+        margin-top: 20px;
+      }
+    }
+    &__drop {
+      display: none !important;
     }
     &:hover {
       .card__container {

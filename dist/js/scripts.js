@@ -49,8 +49,7 @@ $(document).ready(function () {
 				items = $this.find('li'),
 				btnAll = $this.find('.js-hide-list-all'),
 				valueItem = $this.data('value'),
-				img = $this.siblings('.card__imageblock'),
-				content = $this.siblings('.card__content'),
+				img = $this.siblings('.card__wrap').find('.card__imageblock'),
 				itemTarget = items.filter(function () {
 					return $(this).index() > valueItem - 1
 				});
@@ -63,12 +62,10 @@ $(document).ready(function () {
 					$(this).addClass('active');
 					itemTarget.show();
 					img.addClass('hide');
-					content.addClass('hide');
 				} else {
 					itemTarget.hide();
 					btnAll.show();
 					img.removeClass('hide');
-					content.removeClass('hide');
 					$(this).removeClass('active');
 				}
 			})

@@ -26,14 +26,19 @@ mixin card(image, title, count)
           li.js-hide-list-all.card__allbtn
             img(src="img/arrow.svg", alt="")
         else 
-      .card__imageblock
-        a(href="#") 
-          img(src= image, alt="")
-        a(href="#").card__moremob Подробнее
-      .card__content 
-        a(href="#").card__title= title
-        a(href="#").card__btn.card__btn--green купить за 22 990 ₽
-        .card__text Экран Mobius 10.3" • Сенсорный экран • Подсветка • Регулировка цветовой температуры  • Wi-Fi • Bluetooth
+      .card__wrap
+        .card__imageblock
+          a(href="#") 
+            img(src= image, alt="")
+        .card__content 
+          a(href="#").card__title= title
+          a(href="#").card__btn.card__btn--green купить за 22 990 ₽
+          .card__text Экран Mobius 10.3" • Сенсорный экран • Подсветка • Регулировка цветовой температуры  • Wi-Fi • Bluetooth
+          a(href="#").card__link.card__link--mob
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="10" viewBox="0 0 20 10">
+              <path d="M57 517H42v2h15v4h2v-4h3v-2h-3v-4h-2v4zm-15-4h12v2H42v-2zm0 8h12v2H42v-2z" transform="translate(-1082.000000, -3047.000000) translate(1040.000000, 2534.000000)"/>
+            </svg>
+            span все характеристики
         .card__drop
           div
             a(href="#").card__btn.card__btn--black подробнее

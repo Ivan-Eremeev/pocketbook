@@ -310,7 +310,7 @@ body.lock {
     font-size: 14px;
   }
   .device__col {
-    margin-bottom: 16px;
+    margin-bottom: 0;
   }
 }
 
@@ -644,6 +644,7 @@ body.lock {
   left: 0;
   right: -1px;
   z-index: 3;
+  text-align: center;
 }
 .card__link {
   font-size: 13px;
@@ -663,6 +664,9 @@ body.lock {
 }
 .card__link:hover svg {
   fill: black;
+}
+.card__link--mob {
+  display: none;
 }
 .card__allbtn {
   display: none;
@@ -698,15 +702,8 @@ body.lock {
 .card:hover .card__btn--green:hover {
   background-color: #187973;
 }
-.card__moremob {
-  display: none;
-}
 @media (max-width: 500px) {
   .card__container {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
     padding-bottom: 16px;
     padding-top: 10px;
     padding-left: 0;
@@ -720,6 +717,11 @@ body.lock {
     left: 10px;
     right: 10px;
   }
+  .card__wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
   .card__imageblock {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
@@ -729,25 +731,31 @@ body.lock {
     height: auto;
     margin-bottom: 0;
   }
+  .card__imageblock.hide {
+    opacity: 1;
+  }
   .card__content {
     padding-left: 20px;
+    padding-bottom: 0;
     text-align: left;
     border: none;
   }
   .card__content.hide {
     opacity: 0.5;
   }
-  .card__moremob {
-    display: block;
-    font-size: 14px;
-    color: #00615b;
-    margin-top: 10px;
-  }
   .card__btn {
     margin-bottom: 20px;
   }
   .card__stickers {
+    position: static;
     max-width: 250px;
+  }
+  .card__link--mob {
+    display: block;
+    margin-top: 20px;
+  }
+  .card__drop {
+    display: none !important;
   }
   .card:hover .card__container {
     background-color: #fff;
